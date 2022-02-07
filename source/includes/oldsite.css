@@ -1,0 +1,108 @@
+/* structural styles and offsets */
+ul.horizontal, ul.horizontal li, ul.horizontal ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 100%;
+}
+
+ul.horizontal {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  cursor: default;
+  z-index: 2000;
+  top: 9.5em/*11.5em*/
+}
+
+ul.horizontal li {
+  width: auto;
+  float: left;
+  position: relative;
+  cursor: pointer;
+  cursor: hand;
+  text-align: left;
+  left: 1em;
+  margin: 0 0 0 -0.1em;
+}
+
+* html ul.horizontal li {
+  margin: 0 -1.1em 0 1em;
+  left: 0;
+}
+
+ul[class^="horizontal"] li {
+  margin: 0 -1.1em 0 1em;
+  left: 0;
+}
+
+ul.horizontal ul {
+  z-index: 2020;
+  padding: 0;
+  cursor: default;
+  position: absolute;
+  left: -100em;
+  top: auto;
+  width: 8.2em;
+  margin: 0 0 0 0;
+  padding: 1px 0 0 0;
+}
+
+ul.horizontal ul li {
+  width: 8.2em;
+  float: none;
+  left: auto;
+  margin: -1px 0 0 0;
+}
+
+ul.horizontal ul ul {
+  margin: -0.45em 0 0 7.65em;
+}
+
+/* design styles */
+ul.horizontal ul {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #00bb85;
+}
+
+ul.horizontal a, ul.horizontal a:visited {
+  display: block;
+  cursor: pointer;
+  cursor: hand;
+  background: #C5F0F1;
+  border: 1px solid #00bb85;
+  padding: 5px 18px 5px 7px;
+  font: normal normal bold 0.7em tahoma, verdana, sans-serif;
+  color: #008000;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+ul.horizontal a:hover, ul.horizontal a:focus, ul.horizontal a:active,
+ul.horizontal a.rollover:link, ul.horizontal a.rollover:visited {
+  	background: #00dfcf;
+  /*background: #ffefcf;
+  color: #806020;*/
+}
+
+/* browser hacks */
+ul.horizontal a { float: left; }
+@media Screen, Projection { ul.horizontal a { float: none; } }
+ul.horizontal ul a { float: none !important; }
+@media screen, projection {
+  * html ul.horizontal li {
+    display: inline;
+    f\loat: left;
+    background: #fff;
+  }
+}
+* html ul.horizontal li { position: static; }
+* html ul.horizontal a { position: relative; }
+
+/* iframe layer */
+ul iframe {
+  position: absolute;
+  z-index: 1010;
+  border: none;
+}
